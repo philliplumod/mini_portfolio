@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:mini_portfolio/screens/homescreens.dart';
+import 'package:mini_portfolio/model/router.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: Homescreen(),
-    debugShowCheckedModeBanner: false,
-  ));
+  runApp(
+    MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: goRouter,
+      builder: (context, router) {
+        return Scaffold(
+          body: router,
+        );
+      },
+    ),
+  );
 }
